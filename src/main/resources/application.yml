@@ -1,0 +1,13 @@
+spring:
+  security:
+    user:
+      name: ${USER}
+      password: ${PASSWORD}
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: ${MODEL}
+          temperature: 0.2
+          max-tokens: 1000

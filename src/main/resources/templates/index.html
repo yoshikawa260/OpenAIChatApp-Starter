@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" th:content="${_csrf.token}" />
+    <meta name="csrf-header" th:content="${_csrf.headerName}" />
+    <title>ChatBot</title>
+    <link rel="stylesheet" th:href="@{index.css}">
+    <link rel="stylesheet" th:href="@{loading.css}">
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h2>Chat</h2>
+        </div>
+        <a class="logout" th:href="@{/logout}">logout</a>
+    </header>
+    <div class="field">
+        <div class="chat-container">
+            <div th:each="chat : ${chatList}">
+                <div class="message-container question">
+                    <p>Q: <span th:text="${chat.message}"></span></p>
+                </div>
+                <div class="message-container answer">
+                    <p>A: <span th:text="${chat.answer}"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="input-area">
+        <form id="chatForm" class="chat-form">
+            <textarea name="message" id="message" class="message-input" required></textarea>
+            <button type="submit" class="submit-button">送信</button>
+        </form>
+    </div>
+
+    <script th:src="@{index.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+</body>
+
+</html>
