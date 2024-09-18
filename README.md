@@ -3,7 +3,7 @@
 ユーザーがメッセージを送信すると、サーバーがOpenAIのAPIを利用して返信を生成し、それをチャット画面に表示します。
 
 ## 使用技術
-- Spring (Boot,Web,AI,Security)
+- Spring Boot(MVC,Web,AI,Security)
 - OpenAI API
 - Thymeleaf
 - JavaScript (Fetch API, Markdown)
